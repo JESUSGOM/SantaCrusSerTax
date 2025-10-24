@@ -4,6 +4,7 @@ import com.sertax.api.model.Trip
 import com.sertax.api.model.TripStatus
 import com.sertax.api.repository.TripRepository
 import org.springframework.stereotype.Service
+import java.time.ZonedDateTime
 
 @Service
 class TripService(private val tripRepository: TripRepository) {

@@ -10,6 +10,19 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/trips")
 class TripController(private val service: TripService) {
-	@GetMapping fun all() = service.findAll()
-	@PostMapping fun create(@RequestBody trip: Trip) = ResponseEntity.ok(service.save(trip))
+	@PostMapping
+	fun createTrip(@RequestBody trip: Trip): Trip = tripService.createTrip(trip)
+	
+	@PutMapping("/{tripid}/assign/{driverid}")
+	fun assignDriver(@PathVariable tripid: Long, @PathVariable driverid: Long): Trip? =
+		tripService.assignDriver(tripid, driverid)
+	
+	@PutMapping("/{tripid}/cancel")
+	fun cancelTrip(@PathVariable tripid: Long): Trip? = tripService.cancelTrip(tripid)
+	
+	@PutMapping("/{tripid}/complete")
+	fun completeTrip(@PathVariable tripid: Long): Trip? = tripService.completeTrip(tripid)
+	
+	@GetMapping("/user/{userid}")
+	fun getTripsByUser(@PathVariable userid: Long): List<Trip> = tripService.getTripsByUser(userid)
 }
