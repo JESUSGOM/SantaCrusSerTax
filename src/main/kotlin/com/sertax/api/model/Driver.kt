@@ -24,3 +24,7 @@ data class Driver(
 	
 	val associationId: Long? = null
 )
+
+enum class DriverRole {
+	OWNER, SALARIED
+}
