@@ -1,8 +1,7 @@
-package com.sertax.api.service
+package com.sertax.api.model
 
-import com.sertax.api.model.DriverStatus
-import com.sertax.api.model.DriverServiceStatus
 import com.sertax.api.repository.DriverStatusRepository
+import com.sertex.api.model.DriverServiceStatus
 import org.springframework.stereotype.Service
 import java.time.ZonedDateTime
 

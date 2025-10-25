@@ -1,6 +1,8 @@
 package com.sertax.api.model
 
 import jakarta.persistence.*
+import jakarta.validation.constraints.*
+import java.time.ZonedDateTime
 
 @Entity
 @Table(name = "drivers")
@@ -12,6 +14,7 @@ data class Driver(
 	val licenseid: Long,
 	
 	@Column(nullable = false)
+	@NotBlank
 	val name: String,
 	
 	@Column(nullable = false)

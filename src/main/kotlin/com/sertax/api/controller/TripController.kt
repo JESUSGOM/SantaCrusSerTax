@@ -1,15 +1,12 @@
 package com.sertax.api.controller
 
 import com.sertax.api.model.Trip
-import com.sertax.api.model.TaxiStop
 import com.sertax.api.service.TripService
-import com.sertax.api.service.TaxiStopService
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/trips")
-class TripController(private val service: TripService) {
+class TripController(private val service: TripService, private val tripService: TripService) {
 	@PostMapping
 	fun createTrip(@RequestBody trip: Trip): Trip = tripService.createTrip(trip)
 	

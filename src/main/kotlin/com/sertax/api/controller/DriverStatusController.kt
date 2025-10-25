@@ -1,8 +1,8 @@
 package com.sertax.api.controller
 
 import com.sertax.api.model.DriverStatus
-import com.sertax.api.model.DriverServiceStatus
-import com.sertax.api.service.DriverStatusService
+import com.sertax.api.model.DriverStatusService
+import com.sertex.api.model.DriverServiceStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController

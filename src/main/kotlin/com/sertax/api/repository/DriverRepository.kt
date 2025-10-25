@@ -2,5 +2,10 @@ package com.sertax.api.repository
 
 import com.sertax.api.model.Driver
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
-interface DriverRepository : JpaRepository<Driver, Long>
+@Repository
+interface DriverRepository : JpaRepository<Driver, Long> {
+	fun findByLicenseid(licenseid: Long): Driver?
+	fun findByIsactiveTrue(): List<Driver>
+}

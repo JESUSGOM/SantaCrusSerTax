@@ -21,7 +21,7 @@ class DriverService(private val repository: DriverRepository) {
 			role = updated.role,
 			passwordhash = updated.passwordhash,
 			isactive = updated.isactive,
-			association_id = updated.association_id
+			associationId = updated.associationId
 		)
 		return repository.save(merged)
 	}
